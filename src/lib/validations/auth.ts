@@ -28,3 +28,14 @@ export const signUpSchema = z
   });
 
 export type SignUpInput = z.infer<typeof signUpSchema>;
+
+export const signInSchema = z.object({
+  email: z
+    .string({ required_error: 'E-mail é obrigatório' })
+    .trim()
+    .email('Informe um e-mail válido')
+    .toLowerCase(),
+  password: z.string({ required_error: 'Senha é obrigatória' }).min(1, 'Senha é obrigatória'),
+});
+
+export type SignInInput = z.infer<typeof signInSchema>;

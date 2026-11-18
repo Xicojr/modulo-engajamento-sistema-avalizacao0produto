@@ -1,48 +1,55 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, ShieldCheck, Sparkles, UserPlus } from 'lucide-react';
-import Link from 'next/link';
+import { ProductGrid } from '@/components/products/product-grid';
+import { Sparkles } from 'lucide-react';
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-6 bg-gradient-to-b from-slate-50 to-slate-100">
-      <div className="w-full max-w-xl">
-        <Card className="border border-slate-200/80 shadow-lg">
-          <CardHeader className="text-center pb-4">
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-              <Sparkles className="h-7 w-7" />
+    <div className="flex-1 bg-slate-50/60 dark:bg-slate-950 flex flex-col">
+      {/* Hero Editorial */}
+      <section className="border-b border-border/60 bg-white dark:bg-slate-900/50 py-12 md:py-16">
+        <div className="container max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-muted-foreground mb-4 bg-slate-50 dark:bg-slate-800">
+              <Sparkles className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
+              <span>Catálogo aberto ao público</span>
             </div>
-            <CardTitle className="text-2xl font-bold tracking-tight">
-              Módulo de Engajamento
-            </CardTitle>
-            <CardDescription className="text-base text-slate-600 mt-2">
-              Sistema de engajamento e avaliação de produtos.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6 pt-2">
-            <div className="rounded-lg bg-slate-100/80 p-4 border border-slate-200 text-sm text-slate-700 space-y-2">
-              <div className="flex items-center gap-2 font-medium text-slate-900">
-                <ShieldCheck className="h-4 w-4 text-emerald-600" />
-                <span>Autenticação segura implementada com Bcrypt</span>
-              </div>
-              <p className="text-slate-600 pl-6">
-                Crie sua conta para acessar o sistema com separação de nomes, validações em tempo
-                real e integração segura.
-              </p>
-            </div>
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
+              Produtos e ferramentas avaliados pela comunidade.
+            </h1>
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Explore lançamentos, descubra serviços confiáveis e acompanhe as opiniões autênticas
+              de quem usa cada solução no dia a dia.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <div className="flex flex-col gap-3">
-              <Link href="/auth/sign-up" className="w-full">
-                <Button className="w-full h-11 text-base gap-2 font-medium shadow-md">
-                  <UserPlus className="h-5 w-5" />
-                  Ir para Criação de Conta
-                  <ArrowRight className="h-4 w-4 ml-auto" />
-                </Button>
-              </Link>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </main>
+      {/* Vitrine de Produtos com Infinite Scroll */}
+      <section className="container max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-16 flex-1">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-xl font-semibold tracking-tight text-foreground">
+              Vitrine de Produtos
+            </h2>
+            <p className="text-xs text-muted-foreground mt-1">
+              Role para baixo para carregar os itens continuamente
+            </p>
+          </div>
+        </div>
+
+        <ProductGrid />
+      </section>
+
+      {/* Rodapé */}
+      <footer className="border-t border-border/60 bg-white dark:bg-slate-900/50 py-8 text-center text-xs text-muted-foreground">
+        <div className="container max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>© {new Date().getFullYear()} Módulo de Engajamento. Catálogo público de produtos.</p>
+          <div className="flex items-center gap-4">
+            <span>Acesso público</span>
+            <span>·</span>
+            <span>Avaliações autênticas</span>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
