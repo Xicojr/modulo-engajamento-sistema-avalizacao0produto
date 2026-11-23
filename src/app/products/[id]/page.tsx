@@ -3,6 +3,7 @@
 import { FeedbackForm } from '@/components/feedback/feedback-form';
 import { FeedbackList } from '@/components/feedback/feedback-list';
 import { StarRating } from '@/components/feedback/star-rating';
+import { AiSummaryCard } from '@/components/products/ai-summary-card';
 import { useAuth } from '@/components/providers/auth-provider';
 import { Button } from '@/components/ui/button';
 import type { ProductFeedback } from '@/lib/feedbacks';
@@ -200,6 +201,9 @@ export default function ProductDetailPage() {
             </div>
           </div>
         </section>
+
+        {/* Resumo Inteligente com IA (Mastra + GPT-4o-mini) */}
+        <AiSummaryCard productId={productId} productName={product.name} />
 
         {/* Seção de Avaliações Existentes */}
         <section className="space-y-6">

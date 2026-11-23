@@ -43,8 +43,9 @@ export function FeedbackForm({ productId, onSuccess }: FeedbackFormProps) {
       setScore(5);
       setFormError(null);
 
-      // Invalida as queries de feedback e dados do produto para atualizar a listagem e média
+      // Invalida as queries de feedback, resumo por IA e dados do produto para sincronização instantânea
       queryClient.invalidateQueries({ queryKey: ['product-feedbacks', productId] });
+      queryClient.invalidateQueries({ queryKey: ['product-ai-summary', productId] });
       queryClient.invalidateQueries({ queryKey: ['product', productId] });
 
       onSuccess?.();

@@ -5,11 +5,11 @@ export const createProductSchema = z.object({
     .string({ required_error: 'O nome do produto é obrigatório.' })
     .trim()
     .min(2, { message: 'O nome do produto deve ter no mínimo 2 caracteres.' })
-    .max(120, { message: 'O nome do produto deve ter no máximo 120 caracteres.' }),
+    .max(500, { message: 'O nome do produto deve ter no máximo 500 caracteres.' }),
   description: z
     .string()
     .trim()
-    .max(1000, { message: 'A descrição deve ter no máximo 1000 caracteres.' })
+    .max(2000, { message: 'A descrição deve ter no máximo 2000 caracteres.' })
     .optional()
     .nullable(),
   image_url: z
