@@ -194,7 +194,7 @@ Para garantir um padrão estético refinado e evitar clichês de design gerados 
 
 ### 1. Clonar e Instalar Dependências
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/Xicojr/modulo-engajamento-sistema-avalizacao0produto.git
 cd modulo-engajamento-sistema-avalizacao0produto
 bun install
 ```
@@ -263,4 +263,6 @@ bun run build
 * **Instituição:** Coders University
 * **Curso:** Pós-Graduação em Engenharia de IA
 * **Módulo:** Módulo 0 (Iniciação / Alinhamento Técnico)
+* **Docente / Instrutor:** Prof. Matheus Castiglioni (Coders University)
+* **Repositório Oficial:** [https://github.com/Xicojr/modulo-engajamento-sistema-avalizacao0produto](https://github.com/Xicojr/modulo-engajamento-sistema-avalizacao0produto)
 * **Metodologia:** Desenvolvimento de software assistido e co-criado em regime de *Pair Programming* com Agente Autônomo de IA (**Google Antigravity / `agy`**), com front-end refinado pela skill **`frontend-design`** da Anthropic ([skills.sh](https://www.skills.sh/anthropics/skills/frontend-design)) e agente de inteligência de produto orquestrado com **Mastra (`@mastra/core`)**.
